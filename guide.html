@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guidely</title>
+  <link rel="stylesheet" href="./style_guide.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <img src="logo/logo.jpg" alt="Guidely Logo" class="logo">
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links">
+      <a href="index.html">Login</a>
+      <a href="home.html">Home</a>
+      <a href="guide.html">Guide</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Hamburger Icon (Mobile only) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      ☰
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="close-btn" onclick="toggleMenu()">✕</span>
+
+    <a href="index.html">Login</a>
+    <a href="home.html">Home</a>
+    <a href="guide.html">Guide</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <div class="button-group">
+    <button class="male" onclick="showMale(); setActive(this)">
+      <img src="male agent/man.png" class="btn-icon"> Male
+    </button>
+
+    <button class="female" onclick="showFemale(); setActive(this)">
+      <img src="female agent/woman.png" class="btn-icon"> Female
+    </button>
+  </div>
+
+
+
+  <div class="hint-wrapper" id="hintWrapper">
+    <p class="hint-text">
+      " Please choose your preferred guide by selecting Male or Female "
+    </p>
+  </div>
+
+  <div class="main-layout">
+
+    <!-- FILTER (LEFT) -->
+    <aside class="filter-panel" id="filterPanel">
+      <h3>Filter</h3>
+
+      <div class="filter-group">
+        <label>Age</label>
+        <select id="ageFilter" onchange="applyFilters()">
+          <option value="">All</option>
+          <option value="20-25">20–25</option>
+          <option value="26-30">26–30</option>
+          <option value="31-35">31–35</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Language</label>
+        <select id="languageFilter" onchange="applyFilters()">
+          <option value="">All</option>
+          <option>English</option>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Spanish</option>
+          <option>Italian</option>
+          <option>Japanese</option>
+          <option>Portuguese</option>
+          <option>French</option>
+          <option>Mandarin</option>
+          <option>Arabic</option>
+          <option>Swahili</option>
+          <option>Dutch</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Rating</label>
+        <select id="ratingFilter" onchange="applyFilters()">
+          <option value="">All</option>
+          <option value="3">3★+</option>
+          <option value="4">4★+</option>
+          <option value="5">5★</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- CARDS (RIGHT) -->
+    <section class="content">
+
+      <!-- FEMALE -->
+      <div class="cards-container" id="femaleCards">
+
+        <div class="card" data-gender="female" data-age="27" data-language="English,Italian,Spanish" data-rating="4.3">
+          <img src="female agent/3.jpeg">
+          <div class="card-details">
+            <h3>Isabella</h3>
+            <p>Age: 27</p>
+            <p>Languages: English, Italian, Spanish</p>
+            <p>Experience: 4 years</p>
+            <p>Reviews: ⭐⭐⭐⭐☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="31" data-language="English,Swahili,Tamil" data-rating="4.5">
+          <img src="female agent/4.jpeg">
+          <div class="card-details">
+            <h3>Nia</h3>
+            <p>Age: 31</p>
+            <p>Languages: English, Swahili , Tamil</p>
+            <p>Experience: 7 years</p>
+            <p>Reviews: ⭐⭐⭐⭐☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="34" data-language="Spanish,English,French" data-rating="4.7">
+          <img src="female agent/5.jpeg">
+          <div class="card-details">
+            <h3>Camila</h3>
+            <p>Age: 34</p>
+            <p>Languages: Spanish, English, French</p>
+            <p>Experience: 10 years</p>
+            <p>Reviews: ⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="25" data-language="English,Arabic,Hindi" data-rating="4.1">
+          <img src="female agent/6.jpeg">
+          <div class="card-details">
+            <h3>Layla</h3>
+            <p>Age: 25</p>
+            <p>Languages: English, Arabic, Hindi</p>
+            <p>Experience: 2.5 years</p>
+            <p>Reviews: ⭐⭐⭐☆☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="35" data-language="English,Spanish,Italian" data-rating="4.7">
+          <img src="female agent/7.jpeg">
+          <div class="card-details">
+            <h3>Elena</h3>
+            <p>Age: 35</p>
+            <p>Languages: English, Spanish, Italian</p>
+            <p>Experience: 11 years</p>
+            <p>Reviews: ⭐⭐⭐⭐⭐ (4.7)</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="28" data-language="Mandarin,English" data-rating="4.3">
+          <img src="female agent/8.jpeg">
+          <div class="card-details">
+            <h3>Mei Lin</h3>
+            <p>Age: 28</p>
+            <p>Languages: Mandarin, English</p>
+            <p>Experience: 5 years</p>
+            <p>Reviews: ⭐⭐⭐⭐☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="32" data-language="English,Arabic,Swahili" data-rating="4.6">
+          <img src="female agent/1.jpeg">
+          <div class="card-details">
+            <h3>Amina</h3>
+            <p>Age: 32</p>
+            <p>Languages: English, Arabic, Swahili</p>
+            <p>Experience: 8 years</p>
+            <p>Reviews: ⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="female" data-age="24" data-language="English,French" data-rating="4.1">
+          <img src="female agent/2.jpeg">
+          <div class="card-details">
+            <h3>Sophia</h3>
+            <p>Age: 24</p>
+            <p>Languages: English, French</p>
+            <p>Experience: 2 years</p>
+            <p>Reviews: ⭐⭐⭐☆☆</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- MALE -->
+      <div class="cards-container" id="maleCards">
+
+        <div class="card" data-gender="male" data-age="40" data-language="Spanish,English,Tamil" data-rating="4.9">
+          <img src="male agent/12.jpeg">
+          <div class="card-details">
+            <h3>Rafael</h3>
+            <p>Age: 40</p>
+            <p>Languages: Spanish, English ,Tamil</p>
+            <p>Experience: 16 years</p>
+            <p>Reviews: ⭐⭐⭐⭐☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="29" data-language="Japanese,English" data-rating="4.2">
+          <img src="male agent/13.jpeg">
+          <div class="card-details">
+            <h3>Kenji</h3>
+            <p>Age: 29</p>
+            <p>Languages: Japanese, English</p>
+            <p>Experience: 5 years</p>
+            <p>Reviews: ⭐⭐⭐⭐☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="45" data-language="English,French" data-rating="4.9">
+          <img src="male agent/14.jpeg">
+          <div class="card-details">
+            <h3>Samuel</h3>
+            <p>Age: 45</p>
+            <p>Languages: English, French</p>
+            <p>Experience: 20 years</p>
+            <p>Reviews: ⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="23" data-language="English" data-rating="3.9">
+          <img src="male agent/15.jpeg">
+          <div class="card-details">
+            <h3>Ethan</h3>
+            <p>Age: 23</p>
+            <p>Languages: English</p>
+            <p>Experience: 1.5 years</p>
+            <p>Reviews: ⭐⭐⭐☆☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="38" data-language="English,German" data-rating="4.8">
+          <img src="male agent/16.jpeg">
+          <div class="card-details">
+            <h3>Daniel</h3>
+            <p>Age: 38</p>
+            <p>Languages: English, German</p>
+            <p>Experience: 14 years</p>
+            <p>Reviews: ⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="30" data-language="English,Portuguese,Spanish" data-rating="4.4">
+          <img src="male agent/11.jpeg">
+          <div class="card-details">
+            <h3>Lucas</h3>
+            <p>Age: 30</p>
+            <p>Languages: English, Portuguese, Spanish</p>
+            <p>Experience: 6 years</p>
+            <p>Reviews: ⭐⭐⭐⭐☆</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="34" data-language="English,French,Arabic" data-rating="4.6">
+          <img src="male agent/10.jpeg">
+          <div class="card-details">
+            <h3>Jamal</h3>
+            <p>Age: 34</p>
+            <p>Languages: English, French, Arabic</p>
+            <p>Experience: 9 years</p>
+            <p>Reviews: ⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+
+        <div class="card" data-gender="male" data-age="26" data-language="English,Dutch,Hindi" data-rating="4.0">
+          <img src="male agent/9.jpeg">
+          <div class="card-details">
+            <h3>Oliver</h3>
+            <p>Age: 26</p>
+            <p>Languages: English, Dutch, Hindi</p>
+            <p>Experience: 3 years</p>
+            <p>Reviews: ⭐⭐⭐☆☆</p>
+          </div>
+        </div>
+
+      </div>
+      
+    </section>
+  </div>
+
+  <script src="./script_guide.js"></script>
+</body>
+
+</html>
