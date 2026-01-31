@@ -1,0 +1,256 @@
+/* Basic tweaks + small custom animations (Tailwind handles most layout) */
+:root{
+    --bg:#f8fbff;
+    --accent-1:#06b6d4;
+    --accent-2:#3b82f6;
+    --accent-3:#7c3aed;
+    --muted:#64748b;
+}
+body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg)}
+
+/* Page background image (place your image at assets/about-bg.jpg) */
+body{
+    background-image: url('assets/about-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card-fade{animation: cardAppear 420ms ease both}
+.fade-in{animation: fadeIn 360ms ease both}
+.float-anim{animation: float 4s ease-in-out infinite}
+
+@keyframes cardAppear{
+    from{opacity:0; transform: translateY(8px)}
+    to{opacity:1; transform: translateY(0)}
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform: translateY(6px)}
+    to{opacity:1; transform: translateY(0)}
+}
+
+@keyframes float{
+    0%{transform: translateY(0)}
+    50%{transform: translateY(-6px)}
+    100%{transform: translateY(0)}
+}
+
+/* small responsive container override if needed */
+.max-w-5xl{max-width:72rem}
+
+/* Accessibility: focus style for carousel buttons */
+#prevBtn:focus, #nextBtn:focus{outline:3px solid rgba(59,130,246,0.3); outline-offset:2px}
+
+/* Header vibrant gradient */
+/* Header: white bar with small logo */
+header{background:#fff; color:var(--accent-2); border-bottom:1px solid rgba(2,6,23,0.04)}
+header h1, header p{color:var(--accent-2)}
+
+/* logo image in header */
+.brand-img{width:72px; height:auto; display:block; object-fit:contain}
+
+@media (max-width:768px){
+    .brand-img{width:88px}
+}
+
+@media (max-width:420px){
+    .brand-img{width:64px}
+}
+
+/* Hero band under header */
+.hero-band{background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#fff; padding:48px 0; margin-bottom:24px}
+.hero-band h2{font-size:2rem; margin:0; font-weight:700}
+.hero-band p{margin:8px 0 0; color:rgba(255,255,255,0.92)}
+
+@media (max-width:640px){
+    .hero-band{padding:28px 0}
+    .hero-band h2{font-size:1.4rem}
+}
+
+/* Make main content slightly translucent so background image shows through */
+main{background: rgba(255,255,255,0.92); backdrop-filter: blur(4px);}
+
+/* Reduce card shadows slightly to match translucent background */
+.service-card, .info-card, .strength-card, #reviews, .card-fade{background-clip: padding-box}
+.service-card, .info-card, .strength-card, #reviews{box-shadow:0 8px 20px rgba(2,6,23,0.06)}
+
+/* service card hover */
+.service-card{transition:transform .28s ease, box-shadow .28s ease}
+.service-card:hover{transform:translateY(-6px); box-shadow:0 12px 28px rgba(2,6,23,0.08)}
+
+/* give each service card a subtle accent color used for the icon */
+.service-card:nth-of-type(1){--accent:var(--accent-1)}
+.service-card:nth-of-type(2){--accent:#ef4444}
+.service-card:nth-of-type(3){--accent:var(--accent-3)}
+.service-card:nth-of-type(4){--accent:#f59e0b}
+.service-card:nth-of-type(5){--accent:#10b981}
+.service-card:nth-of-type(6){--accent:#0369a1}
+.service-card svg{color:var(--accent)}
+.service-card .w-28{background:linear-gradient(180deg,rgba(0,0,0,0.02),rgba(2,6,23,0.02))}
+
+@media (max-width:640px){
+    .service-card{flex-direction:row}
+}
+
+.service-btn{background:linear-gradient(90deg,#0ea5e9,#2563eb); color:white; padding:.45rem .7rem; border-radius:.5rem; font-size:.85rem; box-shadow:0 6px 18px rgba(59,130,246,0.18); text-decoration:none}
+.service-btn:hover{transform:translateY(-3px); box-shadow:0 14px 40px rgba(37,99,235,0.18)}
+.service-card ul{margin-top:0.4rem}
+
+/* Three-info grid cards */
+.three-info-grid .info-card{transition:transform .25s ease, box-shadow .25s ease}
+.three-info-grid .info-card:hover{transform:translateY(-4px); box-shadow:0 10px 28px rgba(2,6,23,0.08)}
+.three-info-grid .info-card{background:linear-gradient(180deg,#ffffff,#f7fbff); border:1px solid rgba(15,23,42,0.03)}
+.three-info-grid .info-card .icon{background:transparent}
+.three-info-grid .info-card .icon{box-shadow:0 8px 18px rgba(2,6,23,0.04)}
+.three-info-grid .icon{font-size:1.05rem}
+
+/* Strength cards */
+.strength-card{background:linear-gradient(180deg,#0ea5e9 0%, #0369a1 100%)}
+.strength-card:nth-child(2){background:linear-gradient(180deg,#06b6d4 0%, #0ea5a1 100%)}
+.strength-card:nth-child(3){background:linear-gradient(180deg,#7c3aed 0%, #4c1d95 100%)}
+.strength-card p{color:rgba(255,255,255,0.92)}
+
+@media (max-width:640px){
+    .three-info-grid{grid-template-columns:1fr}
+    .strength-card{margin-bottom:0.5rem}
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width:768px){
+    main{padding-left:1rem; padding-right:1rem}
+    h2.text-4xl{font-size:1.9rem}
+    .three-info-grid{gap:12px}
+}
+
+@media (max-width:640px){
+    .service-card{flex-direction:column; align-items:center; text-align:center; gap:12px}
+    .service-card .flex-1{width:100%}
+    .service-card .w-28{width:80px; height:80px}
+    .service-card ul{margin-left:1rem; text-align:left}
+    .service-btn{display:block; width:100%; padding:.6rem .75rem}
+    .three-info-grid{grid-template-columns:1fr; gap:12px}
+    .three-info-grid .info-card{padding:1rem}
+    .strength-card{padding:1rem}
+    header .max-w-5xl{padding-left:1rem; padding-right:1rem}
+    .text-3xl{font-size:1.5rem}
+}
+
+@media (max-width:420px){
+    .service-card .w-28{width:64px; height:64px}
+    .service-btn{font-size:.9rem}
+    .icon{width:44px; height:44px}
+}
+.navbar{
+    position:fixed;         
+    top:15px;
+    right:40px;              
+    z-index:10;              
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:35px;
+    padding:12px 25px;
+    border-radius:30px;
+}
+
+.nav-links li a{
+    text-decoration:none;
+    font-size:18px;
+    color:#000;
+    position:relative;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after{
+    width:100%;
+}
+/* HAMBURGER ICON */
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    padding:6px 12px;
+    border-radius:10px;
+}
+
+/* MOBILE VIEW */
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:55px;
+        right:0;
+        flex-direction:column;
+        background:white;
+        padding:15px 25px;
+        border-radius:15px;
+        gap:20px;
+        display:none;   /* 🔥 hidden by default */
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+}
+
+/* SIDE MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+
+  /* 🔥 BLUE BACKGROUND */
+  background: linear-gradient(180deg, #2b7cff, #00c6ff);
+
+  box-shadow: 4px 0 20px rgba(0,0,0,0.25);
+  padding: 80px 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transition: left 0.35s ease;
+  z-index: 1000;
+}
+
+/* SHOW MENU */
+.mobile-menu.show {
+  left: 0;
+}
+
+/* MENU LINKS */
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+
+  /* 🔥 TEXT WHITE */
+  color: black;
+}
+
+/* HOVER EFFECT */
+.mobile-menu a:hover {
+  opacity: 0.8;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  font-size: 26px;
+  cursor: pointer;
+
+  /* 🔥 WHITE */
+  color: black;
+}

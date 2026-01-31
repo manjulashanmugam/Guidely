@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - GuideLy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./about.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Background -->
+    
+    <div class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="guide.html">Guide</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SIDE MENU (IMAGE LIKE) -->
+     <div class="mobile-menu" id="mobileMenu">
+        <span class="close-btn" onclick="toggleMenu()">✕</span>
+
+        <a href="index.html">Login</a>
+        <a href="home.html">Home</a>
+        <a href="guide.html">Guide</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header class="bg-white shadow-sm">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex items-center gap-4">
+            <div class="flex items-center gap-4">
+                    <img src="assets/logo.jpeg" alt="GuideLy logo" class="brand-img">
+                    
+                <div>
+                    <h1 class="text-2xl font-semibold">GuideLy</h1>
+                    <p class="text-sm text-slate-500">Helping passengers feel confident at every step</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <main class="max-w-5xl mx-auto px-6 py-0">
+            <!-- Blue hero band with page title -->
+            <div class="hero-band">
+                <div class="max-w-5xl mx-auto px-6 text-center">
+                    <h2>About Us</h2>
+                    <p>Learn who we are and how we help passengers travel with comfort and confidence.</p>
+                </div>
+            </div>
+
+            <section class="text-center mb-10 pt-6">
+                <div class="text-lg text-slate-600 max-w-3xl mx-auto space-y-2">
+                    <p>GuideLy supports travelers who feel anxious or overwhelmed at airports.</p>
+                    <p>We provide clear, human-centered guidance from check-in to boarding.</p>
+                    <p>Our team offers patient, accessible assistance for seniors and first-time flyers.</p>
+                    <p>Small gestures and clear directions help passengers travel with confidence.</p>
+                </div>
+            </section>
+
+        <!-- Mission / Vision / Goal summary (three cards) -->
+        <section class="mb-12">
+            <div class="max-w-4xl mx-auto text-center mb-6">
+                <h3 class="text-3xl font-bold text-slate-900">Empowering Your Journey</h3>
+                <p class="text-slate-500 mt-2">Our Mission, Vision and Goal — clear commitments that guide every interaction.</p>
+            </div>
+
+            <div class="three-info-grid grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="info-card p-6 bg-white rounded-lg shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="icon bg-yellow-100 text-yellow-600 rounded-full w-12 h-12 flex items-center justify-center">⚡</div>
+                        <div>
+                            <h4 class="font-semibold">Our Mission</h4>
+                            <p class="text-slate-600 text-sm mt-1">Deliver compassionate, patient-centered help so passengers feel confident and cared for during every step of airport travel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card p-6 bg-white rounded-lg shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="icon bg-red-100 text-red-600 rounded-full w-12 h-12 flex items-center justify-center">🎯</div>
+                        <div>
+                            <h4 class="font-semibold">Our Vision</h4>
+                            <p class="text-slate-600 text-sm mt-1">Lead a more accessible travel experience by partnering with airports and airlines to normalize dignified assistance for all travelers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card p-6 bg-white rounded-lg shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="icon bg-pink-100 text-pink-600 rounded-full w-12 h-12 flex items-center justify-center">📈</div>
+                        <div>
+                            <h4 class="font-semibold">Our Goal</h4>
+                            <p class="text-slate-600 text-sm mt-1">Improve passenger confidence and reduce travel friction by offering reliable, easy-to-access on-the-ground assistance at airports.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Removed long duplicate Mission/Vision blocks to simplify layout. -->
+
+        <section class="mb-10">
+            <h3 class="text-3xl font-semibold text-slate-900 mb-4">Services</h3>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <article class="service-card p-4 bg-white rounded-lg shadow-sm flex gap-4 items-start card-fade">
+                    <div class="w-28 h-28 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12h6M9 16h6M7 8h10v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg">Check-in Assistance</h4>
+                        <p class="text-sm text-slate-600">We guide you through documents, kiosks and baggage drop so everything is smooth.</p>
+                        <ul class="mt-3 text-xs text-slate-500 list-disc pl-4">
+                            <li>Document verification help</li>
+                            <li>Guided kiosk check-in</li>
+                            <li>Assistance with baggage drop</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#" class="service-btn inline-block">Learn more</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card p-4 bg-white rounded-lg shadow-sm flex gap-4 items-start card-fade">
+                    <div class="w-28 h-28 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 2l3 3 3 9-3 6-3 2-3-2-3-6 3-9 3-3z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12h6" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg">Security & Baggage Guidance</h4>
+                        <p class="text-sm text-slate-600">Clear explanations of screening steps and packing tips to reduce delays.</p>
+                        <ul class="mt-3 text-xs text-slate-500 list-disc pl-4">
+                            <li>Pre-screening checklist</li>
+                            <li>Packing and liquid rules explained</li>
+                            <li>Companion support through screening</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#" class="service-btn inline-block">Learn more</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card p-4 bg-white rounded-lg shadow-sm flex gap-4 items-start card-fade">
+                    <div class="w-28 h-28 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M2 12l20-7v14L2 12z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M7 12v7" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg">Boarding Gate Support</h4>
+                        <p class="text-sm text-slate-600">Escorts to gate, boarding help and priority assistance when needed.</p>
+                        <ul class="mt-3 text-xs text-slate-500 list-disc pl-4">
+                            <li>Timely gate escorts</li>
+                            <li>Assistance during boarding</li>
+                            <li>Priority seating coordination</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#" class="service-btn inline-block">Learn more</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card p-4 bg-white rounded-lg shadow-sm flex gap-4 items-start card-fade">
+                    <div class="w-28 h-28 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 20v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg">Senior Citizen Assistance</h4>
+                        <p class="text-sm text-slate-600">Patient-paced help for older adults including transfers and seating support.</p>
+                        <ul class="mt-3 text-xs text-slate-500 list-disc pl-4">
+                            <li>Slow-paced, respectful guidance</li>
+                            <li>Transfer and seating support</li>
+                            <li>Medication and comfort accommodations</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#" class="service-btn inline-block">Learn more</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card p-4 bg-white rounded-lg shadow-sm flex gap-4 items-start card-fade">
+                    <div class="w-28 h-28 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 7V3l8 4v4" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg">First-time Flyer Guidance</h4>
+                        <p class="text-sm text-slate-600">Step-by-step orientation to terminals and procedures so you know what to expect.</p>
+                        <ul class="mt-3 text-xs text-slate-500 list-disc pl-4">
+                            <li>Pre-travel checklist</li>
+                            <li>Terminal navigation walkthroughs</li>
+                            <li>On-the-day support and reassurance</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#" class="service-btn inline-block">Learn more</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card p-4 bg-white rounded-lg shadow-sm flex gap-4 items-start card-fade">
+                    <div class="w-28 h-28 rounded-lg bg-slate-50 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-sky-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 15h12l-1.5-6h-9L6 15z" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg">Mobility Support</h4>
+                        <p class="text-sm text-slate-600">Wheelchair assistance, transfers and gentle help across the airport.</p>
+                        <ul class="mt-3 text-xs text-slate-500 list-disc pl-4">
+                            <li>Wheelchair and escort services</li>
+                            <li>Assisted transfers to seats and gates</li>
+                            <li>Coordination with airline ground staff</li>
+                        </ul>
+                        <div class="mt-3">
+                            <a href="#" class="service-btn inline-block">Learn more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Core strengths (moved here for better flow) -->
+        <section class="mb-12">
+            <h3 class="text-3xl font-bold text-slate-900 mb-4 text-center">Our Core Strengths</h3>
+            <p class="text-center text-slate-500 max-w-3xl mx-auto mb-6">We emphasize safety, empathy, and reliability — the foundations that let us deliver consistent assistance to passengers who need it most.</p>
+
+            <div class="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="strength-card p-6 rounded-lg text-white shadow-lg">
+                    <div class="font-semibold text-lg mb-2">Safety & Training</div>
+                    <p class="text-sm opacity-90">Rigorous staff training, safety-first protocols and coordination with ground teams to ensure secure assistance.</p>
+                </div>
+
+                <div class="strength-card p-6 rounded-lg text-white shadow-lg">
+                    <div class="font-semibold text-lg mb-2">Empathy & Respect</div>
+                    <p class="text-sm opacity-90">Careful listening, patient-paced support, and dignity-preserving interactions for seniors and anxious travelers.</p>
+                </div>
+
+                <div class="strength-card p-6 rounded-lg text-white shadow-lg">
+                    <div class="font-semibold text-lg mb-2">Operational Reliability</div>
+                    <p class="text-sm opacity-90">Clear processes, timely transfers, and coordination that reduces delays and improves passenger flow.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h3 class="text-3xl font-semibold text-slate-900 mb-4">Passenger Reviews</h3>
+
+            <div id="reviews" class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6 flex flex-col md:flex-row items-center gap-6">
+                    <img id="review-photo" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=60" alt="elderly passenger smiling" class="w-32 h-32 rounded-full object-cover shadow-md float-anim" />
+
+                    <div class="flex-1">
+                        <blockquote id="review-text" class="text-lg italic text-slate-700">“GuideLy made my first flight smooth and stress-free.”</blockquote>
+                        <p id="review-author" class="mt-3 font-semibold text-slate-900">— Maria K., first-time flyer</p>
+                    </div>
+                </div>
+
+                <div class="absolute right-4 bottom-4 flex gap-2">
+                    <button id="prevBtn" class="p-2 bg-slate-100 rounded hover:bg-slate-200">◀</button>
+                    <button id="nextBtn" class="p-2 bg-slate-100 rounded hover:bg-slate-200">▶</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-sm text-slate-500 py-10">© <span id="year"></span> GuideLy — Assistance with care and compassion</footer>
+    </main>
+
+   <script src="./about.js"></script>
+</body>
+</html>
