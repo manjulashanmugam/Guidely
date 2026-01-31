@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidly | Login</title>
+    <link rel="stylesheet" href="./style_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <img src="logo/logo.jpg" alt="Guidely Logo" class="logo">
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="nav-links">
+            <a href="index.html">Login</a>
+            <a href="home.html">Home</a>
+            <a href="guide.html">Guide</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Hamburger Icon (Mobile only) -->
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <span class="close-btn" onclick="toggleMenu()">✕</span>
+        <a href="index.html">Login</a>
+        <a href="home.html">Home</a>
+        <a href="guide.html">Guide</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+
+            <h2>Welcome to <span>Guidly</span></h2>
+            <p>Your travel companion 🌍</p>
+
+            <form onsubmit="return loginSuccess()" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" autocomplete="off" required>
+                    <label>Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" autocomplete="off" required>
+                    <label>Country</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" autocomplete="off" inputmode="numeric" pattern="[0-9]{10}" maxlength="10"
+                        title="Please enter 10 digit mobile number" required>
+                    <label>Mobile Number</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" autocomplete="off" required>
+                    <label>Email</label>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+        </div>
+    </div>
+    <script src="./script_login.js"></script>
+</body>
+
+</html>
