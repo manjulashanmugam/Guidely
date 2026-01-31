@@ -1,0 +1,290 @@
+*{
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    overflow:hidden; 
+}
+
+/* Background */
+.overlay{
+    background:url("./images/banner.jpeg") center/cover no-repeat;
+    position:fixed;
+    inset:0;
+    z-index:1;
+}
+
+/* Logo */
+#banner{
+    width:180px;
+    position:absolute;
+    top:15px;
+    left:20px;
+    z-index:2;
+}
+
+/* Glass Box */
+.mid{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:400px;
+    height:520px;
+    padding:25px 25px;
+    background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.35));
+    border-radius:26px;
+    box-shadow:0 30px 60px rgba(0,0,0,.45);
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Heading */
+h2{
+    text-align:center;
+    color:black;
+    margin-bottom:12px;
+}
+
+/* Form scroll inside box */
+form{
+    flex:1;
+    overflow-y:auto;
+    padding-right:6px;
+}
+
+/* Scroll bar */
+form::-webkit-scrollbar{
+    width:4px;
+}
+form::-webkit-scrollbar-thumb{
+    background:rgba(255,255,255,.5);
+    border-radius:10px;
+}
+
+/* Form fields */
+.form-group{
+    margin-bottom:14px;
+}
+
+label{
+    font-size:18px;
+    color:black;
+    margin-bottom:4px;
+    display:block;
+}
+
+input, select{
+    width:100%;
+    padding:10px 12px;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid rgba(255,255,255,.6);
+    font-size:16px;
+    color:#ffd700;
+}
+/* IMPORTANT FIX */
+select option{
+    color:#000;         
+    background:#fff;    
+}
+
+
+input::placeholder{
+    color:#ffd700;
+}
+
+input:focus, select:focus{
+    outline:none;
+    border-bottom-color:#ffd700;
+}
+
+/* Row (From-To) */
+.row{
+    display:flex;
+    gap:10px;
+}
+
+/* Error */
+.error{
+    color:#ffd700;
+    font-size:12px;
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:12px;
+    background:#0059ff;
+    color:#ffd700;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+/* Glass animation */
+.glass-btn{
+    position:relative;
+    overflow:hidden;
+}
+.glass-btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    left:-120%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+    animation:shine 3s linear infinite;
+}
+
+@keyframes shine{
+    to{left:120%}
+}
+
+/* Mobile */
+@media(max-width:480px){
+    .mid{
+        width:92%;
+        height:90vh;
+    }
+}
+.guide-btn-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.guide-btn-container button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #ffd700;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.guide-btn-container button:hover {
+  background-color: #ffd700;
+}
+.navbar{
+    position:fixed;         
+    top:15px;
+    right:40px;              
+    z-index:10;              
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:35px;
+    padding:12px 25px;
+    border-radius:30px;
+}
+
+.nav-links li a{
+    text-decoration:none;
+    font-size:18px;
+    color:#000;
+    position:relative;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after{
+    width:100%;
+}
+/* HAMBURGER ICON */
+.hamburger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    padding:6px 12px;
+    border-radius:10px;
+}
+
+/* MOBILE VIEW */
+@media(max-width:768px){
+
+    .hamburger{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:55px;
+        right:0;
+        flex-direction:column;
+        background:white;
+        padding:15px 25px;
+        border-radius:15px;
+        gap:20px;
+        display:none;  
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+}
+
+/* SIDE MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+
+  /* BLUE BACKGROUND */
+  background: linear-gradient(180deg, #2b7cff, #00c6ff);
+
+  box-shadow: 4px 0 20px rgba(0,0,0,0.25);
+  padding: 80px 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transition: left 0.35s ease;
+  z-index: 1000;
+}
+
+/* SHOW MENU */
+.mobile-menu.show {
+  left: 0;
+}
+
+/* MENU LINKS */
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+
+  /* text color */
+  color: black;
+}
+
+/* HOVER EFFECT */
+.mobile-menu a:hover {
+  opacity: 0.8;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  font-size: 26px;
+  cursor: pointer;
+
+  /* black  */
+  color: black;
+}
